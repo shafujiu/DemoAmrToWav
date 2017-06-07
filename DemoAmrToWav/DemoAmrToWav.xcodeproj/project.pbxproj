@@ -108,12 +108,12 @@
 		953557A91D96245B00D35A0B /* DemoAmrToWav */ = {
 			isa = PBXGroup;
 			children = (
+				81C989E81EE5345800116915 /* SFJRecordTool.h */,
+				81C989E91EE5345800116915 /* SFJRecordTool.m */,
 				81C98A151EE549B100116915 /* VoiceTypeTool.h */,
 				81C98A221EE6546500116915 /* libVoiceTypeTool.a */,
 				953557AD1D96245B00D35A0B /* AppDelegate.h */,
 				953557AE1D96245B00D35A0B /* AppDelegate.m */,
-				81C989E81EE5345800116915 /* SFJRecordTool.h */,
-				81C989E91EE5345800116915 /* SFJRecordTool.m */,
 				953557B01D96245B00D35A0B /* ViewController.h */,
 				953557B11D96245B00D35A0B /* ViewController.m */,
 				953557B31D96245B00D35A0B /* Main.storyboard */,
