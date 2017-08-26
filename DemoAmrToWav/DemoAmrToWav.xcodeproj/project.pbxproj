@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		81C989EA1EE5345800116915 /* SFJRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C989E91EE5345800116915 /* SFJRecordTool.m */; };
 		81C98A231EE6546500116915 /* libVoiceTypeTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C98A221EE6546500116915 /* libVoiceTypeTool.a */; };
+		81DC524C1F517EA600768528 /* SFJRcordAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DC524B1F517EA600768528 /* SFJRcordAnimationView.m */; };
+		81DC52501F51866800768528 /* SFJVoicePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DC524E1F51866800768528 /* SFJVoicePlayer.m */; };
+		81DC52511F51866800768528 /* SFJVoicePlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DC524F1F51866800768528 /* SFJVoicePlayer.xib */; };
+		81DC52541F518FA100768528 /* ViewController+SFJRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DC52531F518FA100768528 /* ViewController+SFJRecord.m */; };
 		953557AC1D96245B00D35A0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 953557AB1D96245B00D35A0B /* main.m */; };
 		953557AF1D96245B00D35A0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 953557AE1D96245B00D35A0B /* AppDelegate.m */; };
 		953557B21D96245B00D35A0B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953557B11D96245B00D35A0B /* ViewController.m */; };
@@ -41,6 +45,13 @@
 		81C989E91EE5345800116915 /* SFJRecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFJRecordTool.m; sourceTree = "<group>"; };
 		81C98A151EE549B100116915 /* VoiceTypeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceTypeTool.h; sourceTree = "<group>"; };
 		81C98A221EE6546500116915 /* libVoiceTypeTool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVoiceTypeTool.a; sourceTree = "<group>"; };
+		81DC524A1F517EA600768528 /* SFJRcordAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFJRcordAnimationView.h; sourceTree = "<group>"; };
+		81DC524B1F517EA600768528 /* SFJRcordAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFJRcordAnimationView.m; sourceTree = "<group>"; };
+		81DC524D1F51866800768528 /* SFJVoicePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFJVoicePlayer.h; sourceTree = "<group>"; };
+		81DC524E1F51866800768528 /* SFJVoicePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFJVoicePlayer.m; sourceTree = "<group>"; };
+		81DC524F1F51866800768528 /* SFJVoicePlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFJVoicePlayer.xib; sourceTree = "<group>"; };
+		81DC52521F518FA100768528 /* ViewController+SFJRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+SFJRecord.h"; sourceTree = "<group>"; };
+		81DC52531F518FA100768528 /* ViewController+SFJRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+SFJRecord.m"; sourceTree = "<group>"; };
 		953557A71D96245B00D35A0B /* DemoAmrToWav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAmrToWav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953557AB1D96245B00D35A0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		953557AD1D96245B00D35A0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,6 +96,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81DC52551F51922200768528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				953557B01D96245B00D35A0B /* ViewController.h */,
+				953557B11D96245B00D35A0B /* ViewController.m */,
+				81DC52521F518FA100768528 /* ViewController+SFJRecord.h */,
+				81DC52531F518FA100768528 /* ViewController+SFJRecord.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		81DC52561F51923500768528 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				81C989E81EE5345800116915 /* SFJRecordTool.h */,
+				81C989E91EE5345800116915 /* SFJRecordTool.m */,
+				81C98A151EE549B100116915 /* VoiceTypeTool.h */,
+				81C98A221EE6546500116915 /* libVoiceTypeTool.a */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		81DC52571F51924E00768528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81DC524D1F51866800768528 /* SFJVoicePlayer.h */,
+				81DC524E1F51866800768528 /* SFJVoicePlayer.m */,
+				81DC524F1F51866800768528 /* SFJVoicePlayer.xib */,
+				81DC524A1F517EA600768528 /* SFJRcordAnimationView.h */,
+				81DC524B1F517EA600768528 /* SFJRcordAnimationView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		9535579E1D96245B00D35A0B = {
 			isa = PBXGroup;
 			children = (
@@ -108,14 +153,11 @@
 		953557A91D96245B00D35A0B /* DemoAmrToWav */ = {
 			isa = PBXGroup;
 			children = (
-				81C989E81EE5345800116915 /* SFJRecordTool.h */,
-				81C989E91EE5345800116915 /* SFJRecordTool.m */,
-				81C98A151EE549B100116915 /* VoiceTypeTool.h */,
-				81C98A221EE6546500116915 /* libVoiceTypeTool.a */,
 				953557AD1D96245B00D35A0B /* AppDelegate.h */,
 				953557AE1D96245B00D35A0B /* AppDelegate.m */,
-				953557B01D96245B00D35A0B /* ViewController.h */,
-				953557B11D96245B00D35A0B /* ViewController.m */,
+				81DC52561F51923500768528 /* Tool */,
+				81DC52551F51922200768528 /* Controller */,
+				81DC52571F51924E00768528 /* View */,
 				953557B31D96245B00D35A0B /* Main.storyboard */,
 				953557B61D96245B00D35A0B /* Assets.xcassets */,
 				953557B81D96245B00D35A0B /* LaunchScreen.storyboard */,
@@ -213,7 +255,7 @@
 		9535579F1D96245B00D35A0B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = ZhaoWei;
 				TargetAttributes = {
 					953557A61D96245B00D35A0B = {
@@ -256,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				953557BA1D96245B00D35A0B /* LaunchScreen.storyboard in Resources */,
+				81DC52511F51866800768528 /* SFJVoicePlayer.xib in Resources */,
 				953557B71D96245B00D35A0B /* Assets.xcassets in Resources */,
 				953557B51D96245B00D35A0B /* Main.storyboard in Resources */,
 			);
@@ -283,7 +326,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				81C989EA1EE5345800116915 /* SFJRecordTool.m in Sources */,
+				81DC52501F51866800768528 /* SFJVoicePlayer.m in Sources */,
 				953557B21D96245B00D35A0B /* ViewController.m in Sources */,
+				81DC524C1F517EA600768528 /* SFJRcordAnimationView.m in Sources */,
+				81DC52541F518FA100768528 /* ViewController+SFJRecord.m in Sources */,
 				953557AF1D96245B00D35A0B /* AppDelegate.m in Sources */,
 				953557AC1D96245B00D35A0B /* main.m in Sources */,
 			);
@@ -354,8 +400,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -399,8 +447,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

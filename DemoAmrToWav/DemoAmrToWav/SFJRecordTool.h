@@ -11,11 +11,10 @@
 
 @interface SFJRecordTool : NSObject
 
-+ (instancetype)shareTool;
 /**
      程序启动时，进行会话配置
  */
-- (void)setAVAudioSession;
++ (void)setAVAudioSession;
 
 /**
  播放语音 每一次播放都是一个对象 创建一个AVAudioPlayer对象 并且播放语音
@@ -23,7 +22,7 @@
  @param url 本地的文件地址
  @return AVAudioPlayer 对象
  */
-- (AVAudioPlayer *)playerWithURL:(NSURL *)url;
++ (AVAudioPlayer *)playerWithURL:(NSURL *)url;
 
 /**
  根据录音的Data播放
@@ -31,7 +30,7 @@
  @param data 录音数据
  @return AVAudioPlayer 对象
  */
-- (AVAudioPlayer *)playerWithData:(NSData *)data;
++ (AVAudioPlayer *)playerWithData:(NSData *)data;
 
 /**
  录音 每一次录音都是一个新的AVAudioRecorder对象
@@ -39,7 +38,7 @@
  @param url 本地存储录音的地址，注意文件名需要.aac的后缀。如果需要修改格式，请移步到实现文件，info中的 AVFormatIDKey
  @return AVAudioRecorder录音对象
  */
-- (AVAudioRecorder *)recorderWithURL:(NSURL *)url;
++ (AVAudioRecorder *)recorderWithURL:(NSURL *)url;
 
 /**
  通过 沙盒的caches路径 + 文件名 创建本地文件路径的NSURL对象
@@ -47,6 +46,22 @@
  @param name 文件名
  @return URL对象
  */
-- (NSURL *)urlWithFileName:(NSString *)name;
++ (NSURL *)urlWithFileName:(NSString *)name;
+
+/**
+ 获取语音文件的语音长度
+
+ @param url 文件的地址（本地文件）
+ @return 秒
+ */
++ (CGFloat)voiceDuarationWithURL:(NSURL *)url;
+
+/**
+ 根据语音文件的NSData对象获取时间长
+
+ @param data 语音文件 语音文件的格式必须是ios支持的格式
+ @return 时间
+ */
++ (CGFloat)voiceDuarationWithData:(NSData *)data;
 
 @end

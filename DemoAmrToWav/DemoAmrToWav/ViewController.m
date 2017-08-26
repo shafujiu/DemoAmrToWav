@@ -11,66 +11,64 @@
 #import <AVFoundation/AVFoundation.h>
 
 #import "SFJRecordTool.h"
+#import "SFJRcordAnimationView.h"
+#import "ViewController+SFJRecord.h"
+
+#define kScreenWidth \
+([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] ? [UIScreen mainScreen].nativeBounds.size.width/[UIScreen mainScreen].nativeScale : [UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight \
+([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] ? [UIScreen mainScreen].nativeBounds.size.height/[UIScreen mainScreen].nativeScale : [UIScreen mainScreen].bounds.size.height)
 
 @interface ViewController ()
+{
+    
+    NSData *amrData_;
+    NSData *wavData_;
+}
 
 @end
 
 @implementation ViewController
-{
-    AVAudioPlayer *player_;
-    AVAudioRecorder *recorder_;
-    NSData *amrData_;
-    NSData *wavData_;
+
+/** recordAnimView */
+- (UIView *)recordAnimView{
+    if (!_recordAnimView) {
+        CGFloat width = 200;
+        CGFloat height = width;
+        CGFloat x = (kScreenWidth - width) / 2;
+        CGFloat y = (kScreenHeight - height) / 2;
+        _recordAnimView = [[SFJRcordAnimationView alloc] initWithFrame:CGRectMake(x, y, width, height)];
+    }
+    return _recordAnimView;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (IBAction)play:(id)sender {
     
-}
-
-- (IBAction)start:(id)sender {
-    
-    recorder_ = [[SFJRecordTool shareTool] recorderWithURL:[self fileUrl]];
-}
-
-- (IBAction)stop:(id)sender {
-    [recorder_ stop];
-   
+    [self setupRecordBtn];
+    [self setupVoicePlayer];
 }
 
 - (IBAction)wavToArm:(id)sender {
     
     NSData *data = [NSData dataWithContentsOfURL:[self fileUrl]];
+    
+//    NSLog(@"begin %@",[NSDate date]);
     amrData_ = [[VoiceTypeTool shareInstance] wavToAmr:data];
+    _playTrsBtn.enabled = NO;
 }
 
 - (IBAction)armToWav:(id)sender {
     
      wavData_ = [[VoiceTypeTool shareInstance] amrToWav:amrData_];
+    _playTrsBtn.enabled = YES;
 }
 
-- (IBAction)playOrl:(id)sender {
-    NSData *data = [NSData dataWithContentsOfURL:[self fileUrl]];
-    player_ = [[SFJRecordTool shareTool] playerWithData:data];
-        [player_ play];
-    
-}
 
 - (IBAction)playTrans:(id)sender {
-    
-    player_ = [[SFJRecordTool shareTool] playerWithData:wavData_];
-//    if ([player_ isPlaying]){
-        [player_ play];
-    
+    player_ = [SFJRecordTool playerWithData:wavData_];
+    [player_ play];
 }
-
-- (NSURL *)fileUrl{
-    return [[SFJRecordTool shareTool] urlWithFileName:@"record.wav"];
-}
-
 
 
 @end

@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[SFJRecordTool shareTool] setAVAudioSession];
+    [SFJRecordTool  setAVAudioSession];
     
     
     return YES;

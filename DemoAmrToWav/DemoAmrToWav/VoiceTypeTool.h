@@ -14,7 +14,7 @@
 + (instancetype)shareInstance;
 /**
  *  将传入的amr格式的二进制文件 转换为wav格式的二进制文件
- *
+ *  耗时操作 主线程中会阻塞线程
  *  @param amrData amr格式的文件
  *
  *  @return 转换后的wav二进制文件
