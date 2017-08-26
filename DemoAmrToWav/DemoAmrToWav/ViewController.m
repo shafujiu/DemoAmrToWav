@@ -64,7 +64,6 @@
     _playTrsBtn.enabled = YES;
 }
 
-
 - (IBAction)playTrans:(id)sender {
     player_ = [SFJRecordTool playerWithData:wavData_];
     [player_ play];

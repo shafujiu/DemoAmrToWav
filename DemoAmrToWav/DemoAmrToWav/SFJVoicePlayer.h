@@ -24,7 +24,7 @@
 /**
  声音文件（限制wav格式）
  */
-@property (nonatomic, strong) NSData *voiceData;
+//@property (nonatomic, strong) NSData *voiceData;
 
 @property (nonatomic, weak) id<SFJVoicePlayerDelegate> delegate;
 
@@ -38,7 +38,14 @@
  */
 @property (nonatomic, assign) BOOL showDelBtn;
 
-- (void)stopVoiceAnimating;
+/**
+ 开始录音播放动画
+ */
+- (void)startVoiceAnimating;
 
+/**
+ 停止录音播放动画
+ */
+- (void)stopVoiceAnimating;
 
 @end

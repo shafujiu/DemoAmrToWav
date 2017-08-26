@@ -57,7 +57,7 @@
     _voiceIcon.animationRepeatCount = MAXFLOAT;
 }
 
-- (void)p_startVoiceAnimating{
+- (void)startVoiceAnimating{
     if (!self.voiceIcon.isAnimating) {
         [self.voiceIcon startAnimating];
     }
@@ -84,7 +84,7 @@
     // 2. animation
     [self
      stopVoiceAnimating];
-    [self p_startVoiceAnimating];
+    [self startVoiceAnimating];
     
     if ([self.delegate respondsToSelector:@selector(voicePlayerStartPalyVoice:)]) {
         [self.delegate voicePlayerStartPalyVoice: self];
@@ -96,10 +96,10 @@
     _title.text = [NSString stringWithFormat:@"%.1f\"",duration];
 }
 
-- (void)setVoiceData:(NSData *)voiceData{
-    _voiceData = voiceData;
-    self.hidden = NO;
-}
+//- (void)setVoiceData:(NSData *)voiceData{
+//    _voiceData = voiceData;
+//    self.hidden = NO;
+//}
 
 - (void)setShowDelBtn:(BOOL)showDelBtn{
     _delBtn.hidden = !showDelBtn;

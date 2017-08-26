@@ -26,8 +26,6 @@
     [self.recordBtn addTarget:self action:@selector(p_cancelRecord) forControlEvents:UIControlEventTouchUpOutside];
 }
 
-
-
 - (NSURL *)fileUrl{
     return [SFJRecordTool urlWithFileName:@"record.wav"];
 }
@@ -89,6 +87,8 @@
     [timer_ invalidate];
     
     self.voicePlayer.hidden = YES;
+    
+    [self.recordAnimView removeFromSuperview];
 }
 
 // 点击时候录音提示状态
